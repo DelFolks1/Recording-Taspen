@@ -97,8 +97,8 @@ class DataController extends Controller
         // }
 
         
-        //fungsi validasi masih sedikit salah
-        //coba diulangi kembali
+        //Hati-hati fungsi validasi masih sedikit salah
+        //coba diperbaiki kembali
         if($file   =   $request->LampiranDokumen) {
         $name      =   $file->getClientOriginalName();
         $target_path    =   public_path('storage');
