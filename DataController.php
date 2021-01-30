@@ -33,7 +33,6 @@ class DataController extends Controller
 
     public function index()
     {
-        //
         $batas = 10;
         $datas = Dokumen::count();
         $data = Dokumen::orderBy('IdDokumen', 'desc')->paginate($batas);;
@@ -64,8 +63,6 @@ class DataController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        // dd($request);
         $request->validate(
             [
                 'NamaDokumen' => 'required',
@@ -100,11 +97,10 @@ class DataController extends Controller
         // }
 
         
-        // if validation success
+        //fungsi validasi masih sedikit salah
+        //coba diulangi kembali
         if($file   =   $request->LampiranDokumen) {
         $name      =   $file->getClientOriginalName();
-        // $name      =   time().time().'.'.$file->getClientOriginalName();
-        
         $target_path    =   public_path('storage');
         
             if($file->store($target_path, $name)) {
