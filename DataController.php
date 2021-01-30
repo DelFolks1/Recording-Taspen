@@ -190,6 +190,8 @@ class DataController extends Controller
             }
             
     public function download($id){
+        //bug 
+        //ngetes cek apakah keluar atau tidak 
         dd($id);
     }
     /**
