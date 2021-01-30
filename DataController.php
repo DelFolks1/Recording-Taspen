@@ -120,37 +120,7 @@ class DataController extends Controller
                 return back()->with("success", "File uploaded successfully");
             }
         }   
-        // dd($request);
-        // $fi = $request->LampiranDokumen;
-        // $data = $request->file('LampiranDokumen');
-        // return $data;
-        // if ($file = $request->file('LampiranDokumen')) {
-        //     $name = $file->getClientOriginalName();
-        //     echo $name;
-        // }
-        // $tujuan = 'doc';
-
-        // $file = $request->file('LampiranDokumen');
-
-        // echo $file;
-        // echo 'File Name: ' . $file->getClientOriginalName();
-        // echo '<br>';
-
-        // // ekstensi file
-        // echo 'File Extension: ' . $file->getClientOriginalExtension();
-        // echo '<br>';
-
-        // // real path
-        // echo 'File Real Path: ' . $file->getRealPath();
-        // echo '<br>';
-
-        // // ukuran file
-        // echo 'File Size: ' . $file->getSize();
-        // echo '<br>';
-
-        // // tipe mime
-        // echo 'File Mime Type: ' . $file->getMimeType();
-
+        
 
         Dokumen::create($request->all());
         return redirect()->route('data.index');
@@ -239,6 +209,8 @@ class DataController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    
+    //menghapus data
     public function destroy($id)
     {
         //
