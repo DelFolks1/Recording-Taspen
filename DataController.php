@@ -152,6 +152,7 @@ class DataController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    //Maaf kemarin agak lama mengerjakan bagian yang ini.
     public function update(Request $request, $id)
     {
         //
