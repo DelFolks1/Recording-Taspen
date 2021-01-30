@@ -24,14 +24,9 @@ class DataController extends Controller
     public function search(Request $request)
     {
         $batas = 10;
-        // $jumlah = Event::count();
         $cari = $request->cari;
-        // $data = Event::where('e_name', 'like', "%" . $cari . "%");
         $data = Dokumen::where('NamaDokumen', 'like', "%" . $cari . "%")->orderBy('NamaDokumen', 'desc')->paginate($batas);
         $no = $batas * ($data->currentPage() - 1);
-        // dd($request);
-        // return view('welcome');
-        // return dd($request);
         return view('cari', ['data' => $data], ['no' => $no])->with('status', 'Ditemukan ' . count($data) . ' Dokumen');
         // echo $request;
     }
@@ -135,7 +130,6 @@ class DataController extends Controller
     
     public function show($id)
     {
-        //
     }
     
     /**
@@ -152,8 +146,6 @@ class DataController extends Controller
         $tipe = TypeKlasifikasi::all();
         $unit = UnitKerja::all();
         $dokumen = Dokumen::find($id);
-        // dd($dokumen);
-        // return $dokumen;
         return view('edit', compact('karyawan', 'klasifikasi', 'tipe', 'unit', 'dokumen'));
     }
 
@@ -213,11 +205,8 @@ class DataController extends Controller
     //menghapus data
     public function destroy($id)
     {
-        //
-        // dd($id);
         $data = Dokumen::destroy($id);
 
-        // return $data;
         return redirect()->route('data.index');
     }
 }
